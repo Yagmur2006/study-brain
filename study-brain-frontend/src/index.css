@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+* {
+  font-family: 'Vazirmatn', sans-serif;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #0E1017;
+  direction: rtl;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2C303D;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A089E6;
+}
+
+/* Prose styling for markdown */
+.prose-dark {
+  color: #e2e8f0;
+  line-height: 1.75;
+  direction: rtl;
+  text-align: right;
+}
+.prose-dark h1, .prose-dark h2, .prose-dark h3 {
+  color: #fff;
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+.prose-dark p {
+  margin-bottom: 0.75em;
+}
+.prose-dark ul, .prose-dark ol {
+  padding-right: 1.5em;
+  padding-left: 0;
+  margin-bottom: 0.75em;
+}
+.prose-dark li {
+  margin-bottom: 0.3em;
+}
+.prose-dark code {
+  background: rgba(160, 137, 230, 0.15);
+  color: #A089E6;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.88em;
+  font-family: 'Courier New', monospace;
+  direction: ltr;
+  display: inline-block;
+}
+.prose-dark pre {
+  background: #0a0a12;
+  border: 1px solid #2C303D;
+  border-radius: 12px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75em 0;
+  direction: ltr;
+  text-align: left;
+}
+.prose-dark pre code {
+  background: transparent;
+  color: #e2e8f0;
+  padding: 0;
+  font-size: 0.85em;
+}
+.prose-dark blockquote {
+  border-right: 3px solid #A089E6;
+  border-left: none;
+  padding-right: 1em;
+  padding-left: 0;
+  color: #A0A0A0;
+  margin: 0.75em 0;
+}
+.prose-dark table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75em 0;
+}
+.prose-dark th, .prose-dark td {
+  border: 1px solid #2C303D;
+  padding: 0.5em 0.75em;
+  text-align: right;
+}
+.prose-dark th {
+  background: rgba(160, 137, 230, 0.1);
+  font-weight: 600;
+}
+.prose-dark a {
+  color: #A089E6;
+  text-decoration: underline;
+}
+
+/* KaTeX Math Rendering */
+.prose-dark .katex {
+  font-size: 1.25em !important;
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
+.prose-dark .katex-display {
+  display: block !important;
+  margin: 1.25em 0 !important;
+  text-align: center !important;
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: 0.5em 0 !important;
+}
+
+.prose-dark .katex-display > .katex {
+  font-size: 1.35em !important;
+  text-align: center !important;
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
+.prose-dark .katex-display > .katex > .katex-html {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
+.prose-dark .katex-html {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
+.prose-dark .katex-mathml {
+  direction: ltr !important;
+}
+
+/* Inline math alignment */
+.prose-dark p .katex {
+  display: inline !important;
+  vertical-align: middle !important;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(28, 28, 28, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #A089E6 0%, #7c6bc4 50%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated gradient background */
+.animated-bg {
+  background: radial-gradient(ellipse at 20% 50%, rgba(160, 137, 230, 0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(39, 26, 88, 0.3) 0%, transparent 60%),
+              radial-gradient(ellipse at 60% 80%, rgba(160, 137, 230, 0.05) 0%, transparent 50%),
+              #0E1017;
+}
+
+/* Textarea auto-resize */
+textarea {
+  resize: none;
+  overflow: hidden;
+}
+
+/* File chip animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.file-chip-enter {
+  animation: slideIn 0.25s ease forwards;
+}
+
+/* Typing dots animation */
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+}
+.typing-dot {
+  animation: bounce 1.2s infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Shimmer loading effect */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #1C1C1C 25%, #2C303D 50%, #1C1C1C 75%);
+  background-size: 200% auto;
+  animation: shimmer 2s linear infinite;
+}
