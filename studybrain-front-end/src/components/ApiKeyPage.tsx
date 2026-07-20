@@ -130,7 +130,11 @@ export function ApiKeyPage() {
             className="mt-6 text-center"
           >
             <a
+<<<<<<< Updated upstream:studybrain-front-end/src/components/ApiKeyPage.tsx
               href="https://aistudio.google.com/api-keys"
+=======
+              href="https://aistudio.google.com/apps"
+>>>>>>> Stashed changes:study-brain-front-end/src/components/ApiKeyPage.tsx
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-[#A089E6] hover:text-[#c4b5fd] text-sm transition-colors duration-200 group"
